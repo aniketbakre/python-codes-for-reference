@@ -27,3 +27,16 @@ print('Predicted class:', predicted_class)
 print('Class probabilities:', predictions)
 
 --------------------------------------------------------------------------------------------------------------------
+#decode labels in the target column of a DataFrame
+#For example:
+import pandas as pd
+# Define the label to target mapping dictionary
+label_to_target = {'A': 0, 'B': 1, 'C': 2}
+# Function to decode labels
+def label_decoder(label):
+    return label_to_target[label]
+# Read the CSV file into a DataFrame
+df = pd.read_csv('/content/train/train.csv', encoding='latin1')
+# Apply label decoding to the 'target' column
+df['target'] = df['target'].apply(label_decoder)
+--------------------------------------------------------------------------------------------------------------------
