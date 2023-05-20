@@ -1,0 +1,49 @@
+import bz2
+
+# Specify the path to the .bz2 file
+file_path = 'test.ft.txt.bz2'
+
+# Specify the output file name and path
+output_file = 'output.txt'
+
+# Open the .bz2 file for reading
+with bz2.open(file_path, 'rb') as source_file:
+    # Open the output file for writing
+    with open(output_file, 'wb') as output:
+        # Read and write the contents of the .bz2 file
+        output.write(source_file.read())
+
+print("Unzipping complete.")
+
+
+**Explanation steps of the above code:**
+
+1. Importing the `bz2` module: The `bz2` module in Python provides functions for working with .bz2 files.
+
+2. Specifying the file paths: In the code snippet, you need to specify the path to the .bz2 file that you want to unzip. The variable `file_path` holds the path to the .bz2 file.
+
+3. Specifying the output file name and path: The variable `output_file` is used to specify the name and path of the output file where the contents of the .bz2 file will be saved after extraction.
+
+4. Opening the .bz2 file for reading: The `bz2.open()` function is used to open the .bz2 file specified by `file_path` in binary mode for reading. It returns a file object, which is assigned to the variable `source_file`.
+
+5. Opening the output file for writing: The `open()` function is used to open the output file specified by `output_file` in binary mode for writing. It returns a file object, which is assigned to the variable `output`.
+
+6. Reading and writing the contents: The `source_file.read()` function reads the entire content of the .bz2 file, and `output.write()` writes the content to the output file.
+
+7. Closing the files: The `with` statement takes care of automatically closing the files (`source_file` and `output`) after their respective blocks of code.
+
+8. Printing a completion message: After the extraction is complete, the code prints the message "Unzipping complete."
+
+#In the code snippet, `'rb'` is a mode argument passed to the `bz2.open()` function and the `open()` function.
+
+#In Python, file objects can be opened in different modes to specify how the file should be accessed. Here's what `'rb'` represents:
+
+#`'r'`: This indicates that the file should be opened for reading.
+
+#`'b'`: This indicates that the file should be treated as a binary file. In binary mode, file data is read or written as a sequence of bytes, rather than as text.
+
+#By specifying `'rb'`, we are opening the .bz2 file in binary mode for reading. Similarly, the `open()` function is used with `'wb'` mode to open the output file in binary mode for writing.
+
+#It's important to note that when working with .bz2 files, we typically want to read or write them in binary mode because they are compressed binary files.
+
+Note: Make sure to replace `'test.ft.txt.bz2'` with the correct path to your .bz2 file and `'output.txt'` with the desired output file name and path.
