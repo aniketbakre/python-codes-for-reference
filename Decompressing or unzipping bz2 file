@@ -1,0 +1,16 @@
+import bz2
+
+# Specify the path to the .bz2 file
+file_path = 'test.ft.txt.bz2'
+
+# Specify the output file name and path
+output_file = 'output.txt'
+
+# Open the .bz2 file for reading
+with bz2.open(file_path, 'rb') as source_file:
+    # Open the output file for writing
+    with open(output_file, 'wb') as output:
+        # Read and write the contents of the .bz2 file
+        output.write(source_file.read())
+
+print("Unzipping complete.")
