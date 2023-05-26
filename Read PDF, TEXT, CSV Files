@@ -1,0 +1,38 @@
+## READ PDF ##
+#Install Libraries to Handle PDF
+pip install pypdf
+# Import libraries
+from pypdf import PdfReader
+# Open PDF
+data=open(r'C:\Users\anikbakr\Desktop\Standards\HSE\HSE_ Unloading petrol from road tankers.pdf','rb')
+# Read PDF
+reader=PdfReader(data)
+# Check numbers of the pdf
+print(len(reader.pages))
+#Insert page number which want to extract the text
+Pg_num=input()
+page=reader.pages[(int(Pg_num)-1)]
+print(Pg_num)
+# Extract the text from the page
+text=page.extract_text()
+print(text)
+# To close the pdf file
+data.close()
+
+
+
+## READ TEXT FILE ##
+# To Open the text file
+text_data=open(r"C:\Users\anikbakr\Downloads\sample3.txt","r")
+
+# To read the text file
+print(text_data.read())
+
+
+
+## READ CSV FILE ##
+# To read .csv file'
+import pandas as pd
+data=pd.read_csv(r"C:\Users\anikbakr\Downloads\HSE.csv")
+# To read top rows
+data.head()
